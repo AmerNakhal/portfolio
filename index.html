@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amer AlNakhal | UX/UI Designer</title>
+  <meta name="description" content="Portfolio of Amer AlNakhal, UX/UI Designer with 6+ years of experience in mobile and web product design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-soft: #111827;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #7c3aed;
+      --primary-2: #06b6d4;
+      --accent: #22c55e;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 26px;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.28), transparent 32rem),
+        radial-gradient(circle at 80% 10%, rgba(6, 182, 212, 0.22), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin-inline: auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(13, 17, 23, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 1.25rem;
+    }
+
+    .logo span {
+      color: var(--primary-2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: #fff !important;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.32);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      background: var(--card);
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 92px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #c4b5fd;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 20px var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 7vw, 5.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff, #c4b5fd 42%, #67e8f9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      border-color: transparent;
+      box-shadow: 0 16px 45px rgba(124, 58, 237, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 22px;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(6, 182, 212, 0.22), transparent 20rem);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .hero-card:hover::before {
+      opacity: 1;
+    }
+
+    .mock-window {
+      position: relative;
+      border-radius: 20px;
+      background: #0f172a;
+      border: 1px solid rgba(255,255,255,0.12);
+      overflow: hidden;
+    }
+
+    .window-top {
+      height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #ef4444;
+    }
+
+    .dot:nth-child(2) { background: #f59e0b; }
+    .dot:nth-child(3) { background: #22c55e; }
+
+    .mock-content {
+      padding: 22px;
+    }
+
+    .mock-header {
+      height: 90px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.8), rgba(6,182,212,0.75));
+      margin-bottom: 18px;
+    }
+
+    .mock-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .mock-box {
+      min-height: 120px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mock-line {
+      height: 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      margin-bottom: 10px;
+    }
+
+    .mock-line.short {
+      width: 60%;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 46px;
+    }
+
+    .stat-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .skill-card {
+      position: relative;
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(103, 232, 249, 0.5);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .skill-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(6,182,212,0.22));
+      margin-bottom: 18px;
+      font-size: 1.3rem;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.055);
+      box-shadow: 0 14px 60px rgba(0, 0, 0, 0.22);
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(103, 232, 249, 0.45);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+    }
+
+    .project-image {
+      position: relative;
+      height: 230px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(6,182,212,0.25));
+    }
+
+    .project-image::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06)),
+        repeating-linear-gradient(0deg, transparent 0 23px, rgba(255,255,255,0.08) 23px 24px);
+      border: 1px solid rgba(255,255,255,0.2);
+      transform: rotate(-2deg) scale(1);
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-image::before {
+      transform: rotate(0deg) scale(1.08);
+    }
+
+    .project-image::after {
+      content: "View Case Study";
+      position: absolute;
+      inset: auto 24px 24px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(13, 17, 23, 0.78);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.16);
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-weight: 700;
+    }
+
+    .project-card:hover .project-image::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-content {
+      padding: 22px;
+    }
+
+    .project-tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #a5f3fc;
+      background: rgba(6,182,212,0.12);
+      border: 1px solid rgba(6,182,212,0.22);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .project-content h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-meta span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      color: #cbd5e1;
+      font-size: 0.78rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .process-card {
+      position: relative;
+      padding: 26px;
+      min-height: 220px;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      transition: transform 0.25s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .process-card::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: inline-flex;
+      margin-bottom: 28px;
+      color: #67e8f9;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .about-card {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 32px;
+      align-items: center;
+      padding: 34px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      min-height: 420px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(124,58,237,0.45), rgba(6,182,212,0.25)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop') center/cover;
+      border: 1px solid rgba(255,255,255,0.14);
+      overflow: hidden;
+    }
+
+    .about-content h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tool-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tool-cloud span {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dbeafe;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .contact-card {
+      position: relative;
+      padding: 44px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.25), rgba(6,182,212,0.16));
+      border: 1px solid var(--card-border);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.065em;
+      margin-bottom: 18px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-card {
+        grid-template-columns: 1fr;
+      }
+
+      .stats,
+      .skills-grid,
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        padding-top: 68px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .mobile-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 20px;
+        background: rgba(17, 24, 39, 0.96);
+        border: 1px solid var(--card-border);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255,255,255,0.06);
+      }
+
+      .nav-cta {
+        text-align: center;
+      }
+
+      .hero {
+        padding: 54px 0 54px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .stats,
+      .skills-grid,
+      .project-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head h2 {
+        margin-bottom: 14px;
+      }
+
+      .portrait {
+        min-height: 300px;
+      }
+
+      .about-card,
+      .contact-card {
+        padding: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home" id="logoText">Amer<span>.</span></a>
+      <button class="mobile-toggle" aria-label="Open navigation" id="mobileToggle">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#projects" id="navProjects">Projects</a>
+        <a href="#process" id="navProcess">Process</a>
+        <a href="#about" id="navAbout">About</a>
+        <a href="#contact" class="nav-cta" id="navContact">Contact</a>
+      </div>
+      <button id="langToggle" style="margin-left:16px;padding:6px 14px;border-radius:999px;border:none;background:linear-gradient(135deg,#7c3aed,#06b6d4);color:#fff;font-weight:600;cursor:pointer;">中文</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <div class="eyebrow" id="eyebrowText">Available for UX/UI & Product Design work</div>
+        <h1 id="heroTitle">Designing clean, usable & scalable <span class="gradient-text">digital products.</span></h1>
+        <p id="heroDesc">
+          I am Amer AlNakhal, a UX/UI Designer with 6+ years of experience designing mobile and web interfaces, user flows, prototypes, dashboards, and developer-ready product experiences.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects" id="heroProjectsBtn">View Projects →</a>
+          <a class="btn btn-secondary" href="mailto:amernakhal22@gmail.com" id="heroEmailBtn">Email Me</a>
+        </div>
+        <div class="stats">
+          <div class="stat-card">
+            <strong>6+</strong>
+            <span id="statExp">Years UX/UI Experience</span>
+          </div>
+          <div class="stat-card">
+            <strong>3</strong>
+            <span id="statAreas">Core Product Areas</span>
+          </div>
+          <div class="stat-card">
+            <strong id="statWeb">Web</strong>
+            <span id="statWebDesc">Dashboard & Responsive UI</span>
+          </div>
+          <div class="stat-card">
+            <strong id="statMobile">Mobile</strong>
+            <span id="statMobileDesc">App UX/UI Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal" id="tiltCard">
+        <div class="mock-window">
+          <div class="window-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="mock-content">
+            <div class="mock-header"></div>
+            <div class="mock-grid">
+              <div class="mock-box"></div>
+              <div class="mock-box"></div>
+            </div>
+            <div class="mock-line"></div>
+            <div class="mock-line"></div>
+            <div class="mock-line short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="skillsTitle">Core expertise</h2>
+          <p id="skillsDesc">Focused on practical UX/UI design that connects user needs, interface clarity, product goals, and implementation feasibility.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">✦</div>
+            <h3 id="skill1Title">Mobile App UX/UI</h3>
+            <p id="skill1Desc">User flows, screen structures, onboarding, forms, navigation, and high-fidelity mobile interfaces.</p>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">▦</div>
+            <h3 id="skill2Title">Web & Dashboard UI</h3>
+            <p id="skill2Desc">Responsive dashboards, tables, cards, filters, data sections, and task-oriented interface layouts.</p>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">◎</div>
+            <h3 id="skill3Title">Prototyping & Handoff</h3>
+            <p id="skill3Desc">Interactive prototypes, organized design files, reusable components, and developer-ready handoff assets.</p>
+          </article>
+          <article class="skill-card reveal">
+            <div class="skill-icon">⌁</div>
+            <h3 id="skill4Title">Product Redesign</h3>
+            <p id="skill4Desc">Improving usability, visual hierarchy, spacing, typography, component consistency, and navigation clarity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="projectsTitle">Selected projects</h2>
+          <p id="projectsDesc">Explore a selection of my UX/UI projects. Click any preview to view it in detail.</p>
+        </div>
+        <div class="project-grid">
+  <!-- Project 1: Bu Gudao -->
+  <a href="images/不孤岛/Splash.png" class="project-card reveal project-lightbox" data-title="Bu Gudao" data-desc="UI design for a travel app">
+    <div class="project-image"><img src="images/不孤岛/Splash.png" alt="Bu Gudao Splash"></div>
+    <div class="project-content">
+      <span class="project-tag">Mobile App</span>
+      <h3>Bu Gudao</h3>
+      <p>UI design for a travel application</p>
+    </div>
+  </a>
+
+  <!-- Project 2: Hope Paw -->
+  <a href="images/希望之爪/Splash.png" class="project-card reveal project-lightbox" data-title="Hope Paw" data-desc="UI design for an app for selling and caring for cats and dogs">
+    <div class="project-image"><img src="images/希望之爪/Splash.png" alt="Hope Paw Splash"></div>
+    <div class="project-content">
+      <span class="project-tag">Mobile App</span>
+      <h3>Hope Paw</h3>
+      <p>UI design for an app for selling and caring for cats and dogs</p>
+    </div>
+  </a>
+
+  <!-- Project 3: Swtle -->
+  <a href="images/Swtle/Home.png" class="project-card reveal project-lightbox" data-title="Swtle" data-desc="UI design for a finance website homepage">
+    <div class="project-image"><img src="images/Swtle/Home.png" alt="Swtle Home"></div>
+    <div class="project-content">
+      <span class="project-tag">Web App</span>
+      <h3>Swtle</h3>
+      <p>UI design for the homepage of a finance website</p>
+    </div>
+  </a>
+
+  <!-- Project 4: SportApp-Wireframe -->
+  <a href="images/SportApp-Wireframe/Start.png" class="project-card reveal project-lightbox" data-title="SportApp-Wireframe" data-desc="Wireframe UI for a sports app">
+    <div class="project-image"><img src="images/SportApp-Wireframe/Start.png" alt="SportApp-Wireframe Start"></div>
+    <div class="project-content">
+      <span class="project-tag">Mobile App</span>
+      <h3>SportApp-Wireframe</h3>
+      <p>Wireframe UI for a sports application</p>
+    </div>
+  </a>
+
+  <!-- Project 5: JobsApp -->
+  <a href="images/JobsApp/Home.png" class="project-card reveal project-lightbox" data-title="JobsApp" data-desc="UI design for a job search app">
+    <div class="project-image"><img src="images/JobsApp/Home.png" alt="JobsApp Home"></div>
+    <div class="project-content">
+      <span class="project-tag">Mobile App</span>
+      <h3>JobsApp</h3>
+      <p>UI design for a job search application</p>
+    </div>
+  </a>
+
+  <!-- Project 6: HostCrypto -->
+  <a href="images/HostCrypto/Home.png" class="project-card reveal project-lightbox" data-title="HostCrypto" data-desc="UI design for a cryptocurrency app">
+    <div class="project-image"><img src="images/HostCrypto/Home.png" alt="HostCrypto Home"></div>
+    <div class="project-content">
+      <span class="project-tag">Mobile App</span>
+      <h3>HostCrypto</h3>
+      <p>UI design for a cryptocurrency app</p>
+    </div>
+  </a>
+
+  <!-- Project 7: Golden Hotel -->
+  <a href="images/Golden Hotel/Golden Hotel.png" class="project-card reveal project-lightbox" data-title="Golden Hotel" data-desc="UI design for a hotel booking website homepage">
+    <div class="project-image"><img src="images/Golden Hotel/Golden Hotel.png" alt="Golden Hotel"></div>
+    <div class="project-content">
+      <span class="project-tag">Web App</span>
+      <h3>Golden Hotel</h3>
+      <p>UI design for the homepage of a hotel booking website</p>
+    </div>
+  </a>
+
+  <!-- Project 8: ShoesDesign -->
+  <a href="images/Graphic Design/ShoesDesign.png" class="project-card reveal project-lightbox" data-title="ShoesDesign" data-desc="Design for shoe products">
+    <div class="project-image"><img src="images/Graphic Design/ShoesDesign.png" alt="ShoesDesign"></div>
+    <div class="project-content">
+      <span class="project-tag">Graphic Design</span>
+      <h3>ShoesDesign</h3>
+      <p>Design for shoe products</p>
+    </div>
+  </a>
+
+  <!-- Project 9: ShoessDesign -->
+  <a href="images/Graphic Design/ShoessDesign.png" class="project-card reveal project-lightbox" data-title="ShoessDesign" data-desc="Design for shoe products">
+    <div class="project-image"><img src="images/Graphic Design/ShoessDesign.png" alt="ShoessDesign"></div>
+    <div class="project-content">
+      <span class="project-tag">Graphic Design</span>
+      <h3>ShoessDesign</h3>
+      <p>Design for shoe products</p>
+    </div>
+  </a>
+
+  <!-- Project 10: SkincareDesign -->
+  <a href="images/Graphic Design/SkincareDesign.png" class="project-card reveal project-lightbox" data-title="SkincareDesign" data-desc="Design for skincare products">
+    <div class="project-image"><img src="images/Graphic Design/SkincareDesign.png" alt="SkincareDesign"></div>
+    <div class="project-content">
+      <span class="project-tag">Graphic Design</span>
+      <h3>SkincareDesign</h3>
+      <p>Design for skincare products</p>
+    </div>
+  </a>
+
+  <!-- Project 11: WatchDesign -->
+  <a href="images/Graphic Design/WatchDesign.png" class="project-card reveal project-lightbox" data-title="WatchDesign" data-desc="Design for wristwatch products">
+    <div class="project-image"><img src="images/Graphic Design/WatchDesign.png" alt="WatchDesign"></div>
+    <div class="project-content">
+      <span class="project-tag">Graphic Design</span>
+      <h3>WatchDesign</h3>
+      <p>Design for wristwatch products</p>
+    </div>
+  </a>
+</div>
+      </div>
+      <!-- Lightbox Modal -->
+      <div id="lightboxModal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100vw; height:100vh; background:rgba(12,16,22,0.97); align-items:center; justify-content:center; flex-direction:column;">
+        <button id="lightboxClose" style="position:absolute;top:30px;right:40px;font-size:2.2rem;color:#fff;background:none;border:none;cursor:pointer;z-index:2;">&times;</button>
+        <div id="lightboxContent" style="max-width:96vw;max-height:86vh;display:flex;flex-direction:column;align-items:center;">
+          <img id="lightboxImg" src="" alt="" style="max-width:100%;max-height:64vh;border-radius:24px;box-shadow:0 16px 50px rgba(0,0,0,0.36);margin-bottom:22px;">
+          <div style="text-align:center;">
+            <h3 id="lightboxTitle" style="color:#fff;margin-bottom:8px;font-size:1.4rem;letter-spacing:-0.03em;"></h3>
+            <p id="lightboxDesc" style="color:#a5b4fc;font-size:1rem;max-width:480px;margin:0 auto;"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="processTitle">Design process</h2>
+          <p id="processDesc">A clear design workflow from understanding requirements to preparing clean, implementation-ready design deliverables.</p>
+        </div>
+        <div class="process">
+          <article class="process-card reveal">
+            <h3 id="process1Title">Understand</h3>
+            <p id="process1Desc">Clarify business goals, user needs, product requirements, target screens, and expected user actions.</p>
+          </article>
+          <article class="process-card reveal">
+            <h3 id="process2Title">Structure</h3>
+            <p id="process2Desc">Create user flows, information architecture, screen maps, and low-fidelity wireframes.</p>
+          </article>
+          <article class="process-card reveal">
+            <h3 id="process3Title">Design</h3>
+            <p id="process3Desc">Build high-fidelity UI screens, design systems, responsive layouts, and interactive prototypes.</p>
+          </article>
+          <article class="process-card reveal">
+            <h3 id="process4Title">Deliver</h3>
+            <p id="process4Desc">Prepare organized design files, components, specs, and handoff materials for developers and clients.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-card reveal">
+          <div class="portrait" role="img" aria-label="Workspace image placeholder"></div>
+          <div class="about-content">
+            <h2 id="aboutTitle">About Amer</h2>
+            <p id="aboutP1">
+              I am a UX/UI Designer based in Beijing, China, with 6+ years of experience designing mobile and web application interfaces for freelance and client-based projects.
+            </p>
+            <p id="aboutP2">
+              My work focuses on user flows, wireframes, interactive prototypes, high-fidelity interfaces, responsive layouts, dashboard UI, product redesign, design systems, and developer-ready handoff.
+            </p>
+            <p id="aboutP3">
+              I also have a Flutter development background, which helps me design interfaces that are more practical, feasible, and easier to implement.
+            </p>
+            <div class="tool-cloud">
+              <span>Figma</span>
+              <span>Adobe XD</span>
+              <span>Axure</span>
+              <span>HTML/CSS</span>
+              <span>Photoshop</span>
+              <span>Illustrator</span>
+              <span>Flutter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <h2 id="contactTitle">Let’s design something useful.</h2>
+          <p id="contactDesc">Open to UX/UI design opportunities, freelance product design work, dashboard UI, mobile app design, and product redesign projects.</p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="mailto:amernakhal22@gmail.com" id="contactEmailBtn">amernakhal22@gmail.com</a>
+            <a class="btn btn-secondary" href="https://www.behance.net/aamernakhal" target="_blank" rel="noopener" id="contactBehanceBtn">Behance Portfolio</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/amer-alnakhal-5253bb255" target="_blank" rel="noopener" id="contactLinkedInBtn">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" id="footerText">© <span id="year"></span> Amer AlNakhal. UX/UI Designer.</div>
+  </footer>
+
+
+  <script>
+    // --- Language data ---
+    const langData = {
+      en: {
+        logoText: 'Amer<span>.</span>',
+        navProjects: 'Projects',
+        navProcess: 'Process',
+        navAbout: 'About',
+        navContact: 'Contact',
+        eyebrowText: 'Available for UX/UI & Product Design work',
+        heroTitle: 'Designing clean, usable & scalable <span class="gradient-text">digital products.</span>',
+        heroDesc: 'I am Amer AlNakhal, a UX/UI Designer with 6+ years of experience designing mobile and web interfaces, user flows, prototypes, dashboards, and developer-ready product experiences.',
+        heroProjectsBtn: 'View Projects →',
+        heroEmailBtn: 'Email Me',
+        statExp: 'Years UX/UI Experience',
+        statAreas: 'Core Product Areas',
+        statWeb: 'Web',
+        statWebDesc: 'Dashboard & Responsive UI',
+        statMobile: 'Mobile',
+        statMobileDesc: 'App UX/UI Design',
+        skillsTitle: 'Core expertise',
+        skillsDesc: 'Focused on practical UX/UI design that connects user needs, interface clarity, product goals, and implementation feasibility.',
+        skill1Title: 'Mobile App UX/UI',
+        skill1Desc: 'User flows, screen structures, onboarding, forms, navigation, and high-fidelity mobile interfaces.',
+        skill2Title: 'Web & Dashboard UI',
+        skill2Desc: 'Responsive dashboards, tables, cards, filters, data sections, and task-oriented interface layouts.',
+        skill3Title: 'Prototyping & Handoff',
+        skill3Desc: 'Interactive prototypes, organized design files, reusable components, and developer-ready handoff assets.',
+        skill4Title: 'Product Redesign',
+        skill4Desc: 'Improving usability, visual hierarchy, spacing, typography, component consistency, and navigation clarity.',
+        projectsTitle: 'Selected projects',
+        projectsDesc: 'Explore a selection of my UX/UI projects. Click any preview to view it in detail.',
+        processTitle: 'Design process',
+        processDesc: 'A clear design workflow from understanding requirements to preparing clean, implementation-ready design deliverables.',
+        process1Title: 'Understand',
+        process1Desc: 'Clarify business goals, user needs, product requirements, target screens, and expected user actions.',
+        process2Title: 'Structure',
+        process2Desc: 'Create user flows, information architecture, screen maps, and low-fidelity wireframes.',
+        process3Title: 'Design',
+        process3Desc: 'Build high-fidelity UI screens, design systems, responsive layouts, and interactive prototypes.',
+        process4Title: 'Deliver',
+        process4Desc: 'Prepare organized design files, components, specs, and handoff materials for developers and clients.',
+        aboutTitle: 'About Amer',
+        aboutP1: 'I am a UX/UI Designer based in Beijing, China, with 6+ years of experience designing mobile and web application interfaces for freelance and client-based projects.',
+        aboutP2: 'My work focuses on user flows, wireframes, interactive prototypes, high-fidelity interfaces, responsive layouts, dashboard UI, product redesign, design systems, and developer-ready handoff.',
+        aboutP3: 'I also have a Flutter development background, which helps me design interfaces that are more practical, feasible, and easier to implement.',
+        contactTitle: 'Let’s design something useful.',
+        contactDesc: 'Open to UX/UI design opportunities, freelance product design work, dashboard UI, mobile app design, and product redesign projects.',
+        contactEmailBtn: 'amernakhal22@gmail.com',
+        contactBehanceBtn: 'Behance Portfolio',
+        contactLinkedInBtn: 'LinkedIn',
+        footerText: '© <span id="year"></span> Amer AlNakhal. UX/UI Designer.',
+        langToggle: '中文',
+        // ---- PROJECTS TRANSLATIONS ----
+        projects: [
+          {
+            tag: "Mobile App",
+            title: "Bu Gudao",
+            desc: "UI design for a travel application"
+          },
+          {
+            tag: "Mobile App",
+            title: "Hope Paw",
+            desc: "UI design for an app for selling and caring for cats and dogs"
+          },
+          {
+            tag: "Web App",
+            title: "Swtle",
+            desc: "UI design for the homepage of a finance website"
+          },
+          {
+            tag: "Mobile App",
+            title: "SportApp-Wireframe",
+            desc: "Wireframe UI for a sports application"
+          },
+          {
+            tag: "Mobile App",
+            title: "JobsApp",
+            desc: "UI design for a job search application"
+          },
+          {
+            tag: "Mobile App",
+            title: "HostCrypto",
+            desc: "UI design for a cryptocurrency app"
+          },
+          {
+            tag: "Web App",
+            title: "Golden Hotel",
+            desc: "UI design for the homepage of a hotel booking website"
+          },
+          {
+            tag: "Graphic Design",
+            title: "ShoesDesign",
+            desc: "Design for shoe products"
+          },
+          {
+            tag: "Graphic Design",
+            title: "ShoessDesign",
+            desc: "Design for shoe products"
+          },
+          {
+            tag: "Graphic Design",
+            title: "SkincareDesign",
+            desc: "Design for skincare products"
+          },
+          {
+            tag: "Graphic Design",
+            title: "WatchDesign",
+            desc: "Design for wristwatch products"
+          }
+        ]
+      },
+      zh: {
+        logoText: 'Amer<span>.</span>',
+        navProjects: '项目',
+        navProcess: '流程',
+        navAbout: '关于',
+        navContact: '联系',
+        eyebrowText: '可承接 UX/UI 及产品设计项目',
+        heroTitle: '设计简洁、易用且可扩展的 <span class="gradient-text">数字产品。</span>',
+        heroDesc: '我是 Amer AlNakhal，一名拥有 6 年以上经验的 UX/UI 设计师，专注于移动端和网页端界面、用户流程、原型、仪表盘和开发交付体验。',
+        heroProjectsBtn: '查看项目 →',
+        heroEmailBtn: '邮件联系',
+        statExp: '年 UX/UI 经验',
+        statAreas: '核心产品领域',
+        statWeb: '网页',
+        statWebDesc: '仪表盘与响应式界面',
+        statMobile: '移动端',
+        statMobileDesc: 'App UX/UI 设计',
+        skillsTitle: '核心专长',
+        skillsDesc: '专注于将用户需求、界面清晰度、产品目标与实现可行性结合的实用 UX/UI 设计。',
+        skill1Title: '移动端 App UX/UI',
+        skill1Desc: '用户流程、页面结构、引导、表单、导航和高保真移动端界面。',
+        skill2Title: '网页与仪表盘 UI',
+        skill2Desc: '响应式仪表盘、表格、卡片、筛选、数据区块和任务导向界面布局。',
+        skill3Title: '原型与交付',
+        skill3Desc: '交互原型、规范设计文件、可复用组件和开发交付资源。',
+        skill4Title: '产品重设计',
+        skill4Desc: '提升可用性、视觉层级、间距、字体、组件一致性和导航清晰度。',
+        projectsTitle: '精选项目',
+        projectsDesc: '浏览我的 UX/UI 设计案例。点击任意预览可详细查看。',
+        processTitle: '设计流程',
+        processDesc: '从需求理解到输出规范设计交付物的清晰设计工作流。',
+        process1Title: '理解',
+        process1Desc: '明确业务目标、用户需求、产品要求、目标页面和期望用户行为。',
+        process2Title: '结构',
+        process2Desc: '创建用户流程、信息架构、页面地图和低保真线框图。',
+        process3Title: '设计',
+        process3Desc: '构建高保真 UI 界面、设计系统、响应式布局和交互原型。',
+        process4Title: '交付',
+        process4Desc: '整理设计文件、组件、规范和开发/客户交付物。',
+        aboutTitle: '关于 Amer',
+        aboutP1: '我是一名常驻北京的 UX/UI 设计师，拥有 6 年以上的移动端和网页端界面设计经验，服务于自由及客户项目。',
+        aboutP2: '我的工作聚焦于用户流程、线框、交互原型、高保真界面、响应式布局、仪表盘 UI、产品重设计、设计系统和开发交付。',
+        aboutP3: '我还具备 Flutter 开发背景，这让我设计的界面更实用、可实现、易于开发。',
+        contactTitle: '让我们一起做有用的设计。',
+        contactDesc: '欢迎 UX/UI 设计机会、自由产品设计、仪表盘界面、移动端设计及产品重设计合作。',
+        contactEmailBtn: 'amernakhal22@gmail.com',
+        contactBehanceBtn: 'Behance 作品集',
+        contactLinkedInBtn: '领英',
+        footerText: '© <span id="year"></span> Amer AlNakhal. UX/UI 设计师。',
+        langToggle: 'EN',
+        // ---- PROJECTS TRANSLATIONS ----
+        projects: [
+          {
+            tag: "移动端 App",
+            title: "不孤岛",
+            desc: "旅游应用界面设计"
+          },
+          {
+            tag: "移动端 App",
+            title: "希望之爪",
+            desc: "猫狗售卖与养护应用界面设计"
+          },
+          {
+            tag: "网页应用",
+            title: "Swtle",
+            desc: "金融网站首页界面设计"
+          },
+          {
+            tag: "移动端 App",
+            title: "运动App线框",
+            desc: "体育应用线框界面设计"
+          },
+          {
+            tag: "移动端 App",
+            title: "JobsApp",
+            desc: "求职应用界面设计"
+          },
+          {
+            tag: "移动端 App",
+            title: "HostCrypto",
+            desc: "加密货币应用界面设计"
+          },
+          {
+            tag: "网页应用",
+            title: "金色酒店",
+            desc: "酒店预订网站首页界面设计"
+          },
+          {
+            tag: "平面设计",
+            title: "ShoesDesign",
+            desc: "鞋类产品设计"
+          },
+          {
+            tag: "平面设计",
+            title: "ShoessDesign",
+            desc: "鞋类产品设计"
+          },
+          {
+            tag: "平面设计",
+            title: "SkincareDesign",
+            desc: "护肤品产品设计"
+          },
+          {
+            tag: "平面设计",
+            title: "WatchDesign",
+            desc: "手表产品设计"
+          }
+        ]
+      }
+    };
+    let currentLang = 'en';
+    function setLang(lang) {
+      currentLang = lang;
+      const t = langData[lang];
+      // Navbar
+      document.getElementById('logoText').innerHTML = t.logoText;
+      document.getElementById('navProjects').textContent = t.navProjects;
+      document.getElementById('navProcess').textContent = t.navProcess;
+      document.getElementById('navAbout').textContent = t.navAbout;
+      document.getElementById('navContact').textContent = t.navContact;
+      // Hero
+      document.getElementById('eyebrowText').textContent = t.eyebrowText;
+      document.getElementById('heroTitle').innerHTML = t.heroTitle;
+      document.getElementById('heroDesc').textContent = t.heroDesc;
+      document.getElementById('heroProjectsBtn').textContent = t.heroProjectsBtn;
+      document.getElementById('heroEmailBtn').textContent = t.heroEmailBtn;
+      document.getElementById('statExp').textContent = t.statExp;
+      document.getElementById('statAreas').textContent = t.statAreas;
+      document.getElementById('statWeb').textContent = t.statWeb;
+      document.getElementById('statWebDesc').textContent = t.statWebDesc;
+      document.getElementById('statMobile').textContent = t.statMobile;
+      document.getElementById('statMobileDesc').textContent = t.statMobileDesc;
+      // Skills
+      document.getElementById('skillsTitle').textContent = t.skillsTitle;
+      document.getElementById('skillsDesc').textContent = t.skillsDesc;
+      document.getElementById('skill1Title').textContent = t.skill1Title;
+      document.getElementById('skill1Desc').textContent = t.skill1Desc;
+      document.getElementById('skill2Title').textContent = t.skill2Title;
+      document.getElementById('skill2Desc').textContent = t.skill2Desc;
+      document.getElementById('skill3Title').textContent = t.skill3Title;
+      document.getElementById('skill3Desc').textContent = t.skill3Desc;
+      document.getElementById('skill4Title').textContent = t.skill4Title;
+      document.getElementById('skill4Desc').textContent = t.skill4Desc;
+      // Projects (section head)
+      document.getElementById('projectsTitle').textContent = t.projectsTitle;
+      document.getElementById('projectsDesc').textContent = t.projectsDesc;
+      // ---- PROJECTS GRID TRANSLATION ----
+      // Get all project cards in order
+      const projectCards = document.querySelectorAll('.project-grid .project-card');
+      const projectsArr = t.projects;
+      projectCards.forEach((card, i) => {
+        // Tag
+        const tag = card.querySelector('.project-tag');
+        if (tag && projectsArr[i]) tag.textContent = projectsArr[i].tag;
+        // Title
+        const h3 = card.querySelector('.project-content h3');
+        if (h3 && projectsArr[i]) h3.textContent = projectsArr[i].title;
+        // Description
+        const p = card.querySelector('.project-content p');
+        if (p && projectsArr[i]) p.textContent = projectsArr[i].desc;
+        // Lightbox data attributes (for correct language in modal)
+        card.setAttribute('data-title', projectsArr[i]?.title || "");
+        card.setAttribute('data-desc', projectsArr[i]?.desc || "");
+      });
+      // Process
+      document.getElementById('processTitle').textContent = t.processTitle;
+      document.getElementById('processDesc').textContent = t.processDesc;
+      document.getElementById('process1Title').textContent = t.process1Title;
+      document.getElementById('process1Desc').textContent = t.process1Desc;
+      document.getElementById('process2Title').textContent = t.process2Title;
+      document.getElementById('process2Desc').textContent = t.process2Desc;
+      document.getElementById('process3Title').textContent = t.process3Title;
+      document.getElementById('process3Desc').textContent = t.process3Desc;
+      document.getElementById('process4Title').textContent = t.process4Title;
+      document.getElementById('process4Desc').textContent = t.process4Desc;
+      // About
+      document.getElementById('aboutTitle').textContent = t.aboutTitle;
+      document.getElementById('aboutP1').textContent = t.aboutP1;
+      document.getElementById('aboutP2').textContent = t.aboutP2;
+      document.getElementById('aboutP3').textContent = t.aboutP3;
+      // Contact
+      document.getElementById('contactTitle').textContent = t.contactTitle;
+      document.getElementById('contactDesc').textContent = t.contactDesc;
+      document.getElementById('contactEmailBtn').textContent = t.contactEmailBtn;
+      document.getElementById('contactBehanceBtn').textContent = t.contactBehanceBtn;
+      document.getElementById('contactLinkedInBtn').textContent = t.contactLinkedInBtn;
+      // Footer
+      document.getElementById('footerText').innerHTML = t.footerText;
+      document.getElementById('year').textContent = new Date().getFullYear();
+      // Toggle Button
+      document.getElementById('langToggle').textContent = t.langToggle;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setLang(currentLang);
+      document.getElementById('langToggle').addEventListener('click', function() {
+        setLang(currentLang === 'en' ? 'zh' : 'en');
+      });
+    });
+    // Navbar mobile toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileToggle.textContent = navLinks.classList.contains('active') ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.textContent = '☰';
+      });
+    });
+    // (year is handled in setLang)
+
+    // Reveal on scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    // Hero tilt effect
+    const tiltCard = document.getElementById('tiltCard');
+    if (tiltCard) {
+      tiltCard.addEventListener('mousemove', (event) => {
+        const rect = tiltCard.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 8;
+        const rotateX = ((y / rect.height) - 0.5) * -8;
+        tiltCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        tiltCard.style.setProperty('--x', `${x}px`);
+        tiltCard.style.setProperty('--y', `${y}px`);
+      });
+      tiltCard.addEventListener('mouseleave', () => {
+        tiltCard.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+      });
+    }
+
+    // ------ Lightbox functionality ------
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    // --- Multi-image lightbox support ---
+    // 1. Define images for each project (order must match .project-lightbox order)
+    // Each entry: array of image URLs for the project
+    const projectImages = [
+      // 1. Bu Gudao
+      [
+        "images/不孤岛/Splash.png",
+        "images/不孤岛/Home.png",
+        "images/不孤岛/Activities.png",
+        "images/不孤岛/Activities – 1.png",
+        "images/不孤岛/aActivities-Details.png",
+        "images/不孤岛/Cart.png",
+        "images/不孤岛/Profile.png"
+      ],
+      // 2. Hope Paw
+      [
+        "images/希望之爪/Splash.png",
+        "images/希望之爪/SignIn.png",
+        "images/希望之爪/Menu.png",
+        "images/希望之爪/Home1.png",
+        "images/希望之爪/Home.png",
+        "images/希望之爪/Filter.png",
+        "images/希望之爪/Details.png",
+        "images/希望之爪/Adoption.png",
+        "images/希望之爪/Adoption Agreement.png",
+        "images/希望之爪/Favorite.png"
+      ],
+      // 3. Swtle
+      [
+        "images/Swtle/Home.png"
+      ],
+      // 4. SportApp-Wireframe
+      [
+        "images/SportApp-Wireframe/Start.png",
+        "images/SportApp-Wireframe/SignIn.png",
+        "images/SportApp-Wireframe/SignUp.png",
+        "images/SportApp-Wireframe/Home-News.png",
+        "images/SportApp-Wireframe/Home-Groups.png",
+        "images/SportApp-Wireframe/Chats.png",
+        "images/SportApp-Wireframe/Story.png",
+        "images/SportApp-Wireframe/Camera-Cam.png",
+        "images/SportApp-Wireframe/Profile-Posts.png",
+        "images/SportApp-Wireframe/Settings.png"
+      ],
+      // 5. JobsApp
+      [
+        "images/JobsApp/OnBoarding1.png",
+        "images/JobsApp/OnBoarding2.png",
+        "images/JobsApp/OnBoarding3.png",
+        "images/JobsApp/SignIn.png",
+        "images/JobsApp/Home.png",
+        "images/JobsApp/All-Jobs.png",
+        "images/JobsApp/Job-Description.png",
+        "images/JobsApp/CV.png",
+        "images/JobsApp/MyCV.png",
+        "images/JobsApp/Notifications.png"
+      ],
+      // 6. HostCrypto
+      [
+        "images/HostCrypto/Onboarding.png",
+        "images/HostCrypto/Home.png",
+        "images/HostCrypto/All Currencies.png",
+        "images/HostCrypto/Trade.png",
+        "images/HostCrypto/Search.png",
+        "images/HostCrypto/Swap.png",
+        "images/HostCrypto/Wallet.png",
+        "images/HostCrypto/Send.png",
+        "images/HostCrypto/Receive.png",
+        "images/HostCrypto/Profile.png"
+      ],
+      // 7. Golden Hotel
+      [
+        "images/Golden Hotel/Golden Hotel.png"
+      ],
+      // 8. ShoesDesign
+      [
+        "images/Graphic Design/ShoesDesign.png"
+      ],
+      // 9. ShoessDesign
+      [
+        "images/Graphic Design/ShoessDesign.png"
+      ],
+      // 10. SkincareDesign
+      [
+        "images/Graphic Design/SkincareDesign.png"
+      ],
+      // 11. WatchDesign
+      [
+        "images/Graphic Design/WatchDesign.png"
+      ]
+    ];
+
+    // 2. Add navigation buttons to the lightbox modal (if not already present)
+    function ensureLightboxNavButtons() {
+      if (!document.getElementById('lightboxPrev')) {
+        const prevBtn = document.createElement('button');
+        prevBtn.id = 'lightboxPrev';
+        prevBtn.innerHTML = '&#8592;';
+        prevBtn.style.position = 'absolute';
+        prevBtn.style.left = '30px';
+        prevBtn.style.top = '50%';
+        prevBtn.style.transform = 'translateY(-50%)';
+        prevBtn.style.fontSize = '2.2rem';
+        prevBtn.style.color = '#fff';
+        prevBtn.style.background = 'none';
+        prevBtn.style.border = 'none';
+        prevBtn.style.cursor = 'pointer';
+        prevBtn.style.zIndex = '2';
+        prevBtn.style.padding = '8px 16px';
+        prevBtn.style.userSelect = 'none';
+        prevBtn.setAttribute('aria-label', 'Previous image');
+        lightboxModal.appendChild(prevBtn);
+      }
+      if (!document.getElementById('lightboxNext')) {
+        const nextBtn = document.createElement('button');
+        nextBtn.id = 'lightboxNext';
+        nextBtn.innerHTML = '&#8594;';
+        nextBtn.style.position = 'absolute';
+        nextBtn.style.right = '30px';
+        nextBtn.style.top = '50%';
+        nextBtn.style.transform = 'translateY(-50%)';
+        nextBtn.style.fontSize = '2.2rem';
+        nextBtn.style.color = '#fff';
+        nextBtn.style.background = 'none';
+        nextBtn.style.border = 'none';
+        nextBtn.style.cursor = 'pointer';
+        nextBtn.style.zIndex = '2';
+        nextBtn.style.padding = '8px 16px';
+        nextBtn.style.userSelect = 'none';
+        nextBtn.setAttribute('aria-label', 'Next image');
+        lightboxModal.appendChild(nextBtn);
+      }
+    }
+    ensureLightboxNavButtons();
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    // 3. Multi-image state
+    let currentProjectIndex = 0;
+    let currentImageIndex = 0;
+    let currentProjectTitle = '';
+    let currentProjectDesc = '';
+
+    // 4. Helper to show image in lightbox
+    function showLightboxImage(projectIdx, imgIdx, title, desc) {
+      const images = projectImages[projectIdx] || [];
+      if (!images.length) return;
+      // Clamp imgIdx
+      if (imgIdx < 0) imgIdx = images.length - 1;
+      if (imgIdx >= images.length) imgIdx = 0;
+      currentProjectIndex = projectIdx;
+      currentImageIndex = imgIdx;
+      currentProjectTitle = title;
+      currentProjectDesc = desc;
+      lightboxImg.src = images[imgIdx];
+      lightboxImg.alt = title;
+      lightboxTitle.textContent = title + (images.length > 1 ? ` (${imgIdx + 1}/${images.length})` : '');
+      lightboxDesc.textContent = desc;
+      lightboxModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      // Show/hide nav buttons
+      if (images.length > 1) {
+        lightboxPrev.style.display = '';
+        lightboxNext.style.display = '';
+      } else {
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+      }
+    }
+
+    // 5. Bind click events to project cards
+    document.querySelectorAll('.project-lightbox').forEach((link, idx) => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const title = this.getAttribute('data-title') || '';
+        const desc = this.getAttribute('data-desc') || '';
+        showLightboxImage(idx, 0, title, desc);
+      });
+    });
+
+    // 6. Navigation button events
+    lightboxPrev.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showLightboxImage(currentProjectIndex, currentImageIndex - 1, currentProjectTitle, currentProjectDesc);
+    });
+    lightboxNext.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showLightboxImage(currentProjectIndex, currentImageIndex + 1, currentProjectTitle, currentProjectDesc);
+    });
+
+    // 7. Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (lightboxModal.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+          // Previous image
+          if ((projectImages[currentProjectIndex] || []).length > 1) {
+            showLightboxImage(currentProjectIndex, currentImageIndex - 1, currentProjectTitle, currentProjectDesc);
+          }
+        } else if (e.key === 'ArrowRight') {
+          // Next image
+          if ((projectImages[currentProjectIndex] || []).length > 1) {
+            showLightboxImage(currentProjectIndex, currentImageIndex + 1, currentProjectTitle, currentProjectDesc);
+          }
+        } else if (e.key === 'Escape' || e.key === 'Esc') {
+          lightboxModal.style.display = 'none';
+          lightboxImg.src = '';
+          document.body.style.overflow = '';
+        }
+      }
+    });
+
+    // 8. Close events
+    lightboxClose.addEventListener('click', function() {
+      lightboxModal.style.display = 'none';
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    });
+    lightboxModal.addEventListener('click', function(e) {
+      if (e.target === lightboxModal) {
+        lightboxModal.style.display = 'none';
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</body>
+</html>
